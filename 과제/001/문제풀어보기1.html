@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*      
+      1. 나이를 입력받아서  성인인지 판단하는 프로그램 작성하기 
+          - 나이를 입력받는다.   prompt()
+          - 나이를 판단한다  
+          - 알림창에 정보를 출력한다. alert()
+       
+      2. 수를 입력받아 원하는 만큼 별 출력하기
+      3. 수를 입력받아 원하는 만큼 내이름 출력하기   
+      4.  점수를 입력받아 학점을 구하시오 ( 90점이상 A ,  80점 이상B , 나머지 F )
+      5.  국어, 영어, 수학점수를 입력받아 평균을 출력하시오
+      6.  국어, 영어점수 입력 받아  모두 90점 이상이면 장학금 지급 출력
+      7.  카드사용금액을 입력받아  50만원이상  "vvip"  30이상이면 "vip"  나머지 "bronze" 출력
+      */
+        //1번
+        let num1;
+        let remain;
+        let result;
+        num1 = prompt("나이를 입력하세요");
+        remain = num1 % 2
+        if (remain == 0) {
+            result = "짝수";
+        } else {
+            result = "홀수";
+        }
+        alert(result)
+
+        //2번
+        let num2;
+        num2 = prompt("출력할 별 갯수를 입력하세요.")
+        for (i = 1; i <= num2; i++) {
+            document.write("*")
+        }
+
+        //3번
+        num3 = prompt("이름을 몇번 출력하시겠습니까?")
+        for (i = 1; i <= num3; i++) {
+            document.write("하예진<br>")
+        }
+
+    </script>
+</body>
+
+</html>

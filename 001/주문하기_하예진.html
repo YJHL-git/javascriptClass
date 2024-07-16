@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+    <style>
+        .main {
+            width: 500px;
+            border: 1px solid gray;
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+        .img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFOM2kWawUj4blPvQpEtCdN16rfLCYUXov2w&s);
+            background-size: cover;
+        }
+
+        .menu {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .menu input {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .menu 
+
+        .menu button {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- 이미지영역 -->
+        <div class="img"></div>
+        <div class="info">
+            <h1>대관령 황태</h1>
+            <p>겨울 내내 녹았다 얼었다를 반복한 맛좋은 대관령 황태입니다.<br>
+                가격: 30000원/10마리</p>
+        </div>
+
+        <!-- 주문영역 -->
+         <!-- 한 줄 영역 p,h1,div -->
+        <div class="menu">
+            <div>--주문내역--</div>
+            <div>주문자 이름</div>
+            <div><input type="text"></div>
+            <div>수량</div>
+            <select>
+                <option>수량을 선택하세요</option>
+            </select><br>
+            <div>주문 금액</div>
+            <div><input type="text"></div>
+            <div>주문자 금액</div>
+            <div><input type="text"></div>
+            <button>주문하기</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
