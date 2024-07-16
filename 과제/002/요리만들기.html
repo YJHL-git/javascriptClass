@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<img src="/순두부달걀국.webp" alt="">
+
+    <script>
+        function cook() {
+            document.write("<h1> 요리시작</h1>")
+            document.write("재료: 순두부 1봉, 대파 ½대, 달걀 2개, 물 1+½컵(270㎖), 물 1+½컵(270㎖), 양념장(참치액젓 2큰술)<br>")
+            document.write("1. 달걀, 참치액젓, 물을 넣고 달걀 물을 만든다.<br>");
+            document.write("2. 순두부는 봉지째 반으로 썰어준다.<br>");
+            document.write("3. 냄비에 순두부를 하나씩 빼서 넣는다.<br>");
+            document.write("4. 1에서 만든 달걀 물을 모두 붓는다.<br>");
+            document.write("5. 끓어오르기 시작하면 순두부를 수저로 으깬다.<br>");
+            document.write("6. 1㎝ 두께로 썬 대파를 썰어 넣고 5분간 더 끓여 완성한다.");
+            return "순두부달걀국.webp";
+        }
+
+
+        function cook2(순두부, 대파, 달걀, 물) {
+            document.write("<h1>주어진 재료로 요리시작</h1>")
+            document.write("1. " + 물 + 달걀 + "참치액젓을 넣고 달걀 물을 만든다.<br>");
+            document.write("2. " + 순두부 + "는 봉지째 반으로 썰어준다.<br>");
+            document.write("3. 냄비에 순두부를 하나씩 빼서 넣는다.<br>");
+            document.write("4. 1에서 만든 달걀 물을 모두 붓는다.<br>");
+            document.write("5. 끓어오르기 시작하면 순두부를 수저로 으깬다.<br>");
+            document.write("6. 1㎝ 두께로 썬 " + 대파 + "를 썰어 넣고 5분간 더 끓여 완성한다.");
+            return "순두부달걀국.webp";
+        }
+
+
+
+        let food = cook();
+        alert(food);
+
+
+        let 순두부 = "순두부 1봉지";
+        let 대파 = "대파 ½대";
+        let 달걀 = "달걀 2개";
+        let 물 = "물 270ml";
+
+        let food2 = cook2(순두부, 대파, 달걀, 물);
+        alert(food2);
+
+
+
+    </script>
+</body>
+
+</html>

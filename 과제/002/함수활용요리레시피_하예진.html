@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:aliceblue;
+        }
+        .img{
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            background-image: url(https://img.khan.co.kr/lady/2024/03/24/news-p.v1.20240322.6c35b01fde7c417098b6a6fb4a253eee_P1.webp);
+            background-size: cover;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            cursor: pointer;
+        }
+        #recipe {
+            display: none;
+            margin-top: 20px;
+        }
+        #recipe-content {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="img"></div>
+        <h1 id="recipe-btn">요리 시작하기</h1>
+        <div id="recipe">
+            <h2>레시피</h2>
+            <div id="recipe-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function getRecipe() {
+            return `
+                <p>재료: 순두부 1봉, 대파 ½대, 달걀 2개, 물 1+½컵(270㎖), 양념장(참치액젓 2큰술)</p>
+                <p>1. 달걀, 참치액젓, 물을 넣고 달걀 물을 만든다.</p>
+                <p>2. 순두부는 봉지째 반으로 썰어준다.</p>
+                <p>3. 냄비에 순두부를 하나씩 빼서 넣는다.</p>
+                <p>4. 1에서 만든 달걀 물을 모두 붓는다.</p>
+                <p>5. 끓어오르기 시작하면 순두부를 수저로 으깬다.</p>
+                <p>6. 1㎝ 두께로 썬 대파를 썰어 넣고 5분간 더 끓여 완성한다.</p>
+            `;
+        }
+
+        document.getElementById('recipe-btn').addEventListener('click', function() {
+            let recipeDiv = document.getElementById('recipe');
+            let recipeContentDiv = document.getElementById('recipe-content');
+
+            recipeContentDiv.innerHTML = getRecipe();
+
+            if (recipeDiv.style.display === 'none' || recipeDiv.style.display === '') {
+                recipeDiv.style.display = 'block';
+            }else {
+                recipeDiv.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
