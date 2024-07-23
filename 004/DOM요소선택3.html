@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change1() {
+            // alert("dsd");
+            let wrap1 = document.querySelector("#wrap1");
+
+            wrap1.innerHTML = "내용";
+            wrap1.style.width = "100px";
+            wrap1.style.backgroundColor = "green";
+        }
+        function change2() {
+            // alert("asdf")
+            let wrap1 = document.querySelector("#wrap2");
+
+            wrap1.innerHTML = "내용2";
+            wrap1.style.width = "100px";
+            wrap1.style.backgroundColor = "red";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap1"></div>
+    <div class="wrap2"></div>
+
+    <button onclick="change1()">클릭</button>
+    <button onclick="change2()">클릭</button>
+</body>
+
+</html>
