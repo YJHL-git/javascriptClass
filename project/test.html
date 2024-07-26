@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li{
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+        }
+
+        .info{
+            border: 1px solid black;
+            height: 300px;
+            border-radius: 5px;
+            position: relative;
+
+
+            overflow: hidden;
+
+        }
+        .hidden_info{
+            height: 100px;
+            width: 300px;
+            background-color: aqua;
+        }
+
+        .hidden_info{
+            position: absolute;
+            bottom: -100px;
+
+            transition: 0.5s;
+        }
+
+        .info:hover    .hidden_info{
+            bottom: 0px;
+        }
+
+        img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .detail{
+            border: 1px solid black;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>
+
+            <div class="info">
+                dfdfdfdfkdkdf
+                <img>
+                <div  class="hidden_info"> 히든</div>
+            </div>
+
+            <div class="detail">detail</div>
+        </li>
+    </ul>
+</body>
+</html>
