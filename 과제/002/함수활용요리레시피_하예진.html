@@ -13,15 +13,17 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color:aliceblue;
+            background-color: aliceblue;
         }
-        .img{
+
+        .img {
             width: 300px;
             height: 200px;
             margin: 0 auto;
             background-image: url(https://img.khan.co.kr/lady/2024/03/24/news-p.v1.20240322.6c35b01fde7c417098b6a6fb4a253eee_P1.webp);
             background-size: cover;
         }
+
         .container {
             background: white;
             border-radius: 8px;
@@ -31,19 +33,23 @@
             padding: 20px;
             box-sizing: border-box;
         }
+
         .container img {
             max-width: 100%;
             border-radius: 8px;
             margin-bottom: 20px;
         }
+
         h1 {
             text-align: center;
             cursor: pointer;
         }
+
         #recipe {
             display: none;
             margin-top: 20px;
         }
+
         #recipe-content {
             font-size: 1rem;
             line-height: 1.6;
@@ -75,7 +81,7 @@
             `;
         }
 
-        document.getElementById('recipe-btn').addEventListener('click', function() {
+        document.getElementById('recipe-btn').addEventListener('click', function () {
             let recipeDiv = document.getElementById('recipe');
             let recipeContentDiv = document.getElementById('recipe-content');
 
@@ -83,7 +89,7 @@
 
             if (recipeDiv.style.display === 'none' || recipeDiv.style.display === '') {
                 recipeDiv.style.display = 'block';
-            }else {
+            } else {
                 recipeDiv.style.display = 'none';
             }
         });

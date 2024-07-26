@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #bookForm {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #bookList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .book-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .book-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>도서 정보 관리</h1>
+
+    <!-- 도서 정보를 추가하기 위한 폼 -->
+    <form id="bookForm">
+        <label for="title">제목:</label>
+        <input type="text" id="title" required><br>
+
+        <label for="author">저자:</label>
+        <input type="text" id="author" required><br>
+
+        <label for="price">가격:</label>
+        <input type="number" id="price" required><br>
+
+        <label for="pages">페이지 수:</label>
+        <input type="number" id="pages" required><br>
+
+        <button type="submit">도서 추가</button>
+    </form>
+
+    <h2>도서 목록</h2>
+    <div id="bookList"></div>
+
+    <script>
+        // 초기 도서 정보 배열
+        let books = [
+            {
+                title: "해리포터와 마법사의 돌",
+                author: "J.K. 롤링",
+                price: 12000,
+                pages: 300
+            },
+            {
+                title: "어린 왕자",
+                author: "생텍쥐페리",
+                price: 8000,
+                pages: 96
+            },
+            {
+                title: "1984",
+                author: "조지 오웰",
+                price: 15000,
+                pages: 328
+            }
+        ];
+
+        // 도서 목록을 화면에 카드 형태로 출력하는 함수
+        function displayBooks() {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = ''; // 기존 목록 지우기
+            books.forEach((book, index) => {
+                const bookCard = document.createElement('div');
+                bookCard.className = 'book-card';
+
+                bookCard.innerHTML = `
+                    <h3>${book.title}</h3>
+                    <p><strong>저자:</strong> ${book.author}</p>
+                    <p><strong>가격:</strong> ${book.price.toLocaleString()} 원</p>
+                    <p><strong>페이지 수:</strong> ${book.pages} 페이지</p>
+                `;
+                
+                bookList.appendChild(bookCard);
+            });
+        }
+
+        // 폼 제출 이벤트 처리
+        document.getElementById('bookForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 폼 제출 동작 방지
+
+            // 폼 필드 값 가져오기
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const pages = parseInt(document.getElementById('pages').value);
+
+            // 새로운 도서 객체 생성
+            const newBook = {
+                title: title,
+                author: author,
+                price: price,
+                pages: pages
+            };
+
+            // 배열에 도서 추가
+            books.push(newBook);
+
+            // 도서 목록 업데이트
+            displayBooks();
+
+            // 폼 초기화
+            document.getElementById('bookForm').reset();
+        });
+
+        // 초기 도서 목록 표시
+        displayBooks();
+    </script>
+</body>
+</html>

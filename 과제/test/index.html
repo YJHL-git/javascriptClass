@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+
+            position: relative;
+        }
+
+        header .img {
+            width: 210px;
+            height: 80px;
+
+            background-image: url(./images/logo.png);
+
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+
+        header .search {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+
+            display: flex;
+        }
+
+        .search input {
+            height: 40px;
+
+            border: none;
+            outline: none;
+        }
+
+        .search_btn {
+            width: 40px;
+            height: 40px;
+            background-image: url(./images/검색.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        nav {
+            padding: 20px;
+            height: 40px;
+            background-color: rgb(232, 243, 243);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        section {
+            height: 600px;
+        }
+
+        section ul{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        section ul li{
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            border: 0.5px solid rgb(255, 241, 241);
+            margin-left: 5px;
+            position: relative;
+        }
+
+        section img{
+            width: 200px;
+            height: 220px;
+
+
+        }
+        section .box{
+            width: 130px;
+            padding: 10px;
+            color: red;
+            background-color: black;
+
+            position: absolute;
+            top: 1px;
+            left: 10px;
+        }
+        
+        footer{
+            height: 60px;
+            background-color: rgb(233, 239, 239);
+            display: flex;
+        }
+
+        footer>div{
+            width: 33%;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="img"></div>
+        <div class="search">
+            <input type="text">
+            <div class="search_btn"></div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="jounus.html">회원가입</a></li>
+            <li><a href="index.html">홈으로</a></li>
+        </ul>
+    </nav>
+    <section>
+        <ul>
+            <li>
+                <img src="./images/img01.png" alt="">
+                <p>프로젝트기반 빅테이커 분석 과정</p>
+                <div class="box">bigdata</div>
+            </li>
+            <li>
+                <img src="./images/img02.png" alt="">
+                <p>자바(JAVA) & 안드로이드 개발자 양성과정</p>
+                <div class="box">Android</div>
+            </li>
+            <li>
+                <img src="./images/img03.png" alt="">
+                <p>Web 기반 프론트앤드 자바개발자 양성과정</p>
+                <div class="box">Front</div>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <div> <img src="images/footer_acorn.png"></div>
+        <div> (주)에이콘이즈 에이콘아카데미(홍대)</div>
+        <div> COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+
+</html>

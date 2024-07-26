@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양동이 문제 시뮬레이션</title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #buckets {
+            display: flex;
+            gap: 20px;
+        }
+
+        .bucket {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #status {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>양동이 문제 시뮬레이션</h1>
+    <div id="buckets">
+        <div id="bucket3" class="bucket">3L</div>
+        <div id="bucket5" class="bucket">5L</div>
+    </div>
+    <button onclick="fillBucket('3')">3리터 양동이 채우기</button>
+    <button onclick="fillBucket('5')">5리터 양동이 채우기</button><br>
+    <button onclick="emptyBucket('3')">3리터 양동이 비우기</button>
+    <button onclick="emptyBucket('5')">5리터 양동이 비우기</button><br>
+    <button onclick="pour('3', '5')">3리터 양동이에서 5리터 양동이로 붓기</button>
+    <button onclick="pour('5', '3')">5리터 양동이에서 3리터 양동이로 붓기</button>
+    <hr>
+    <h2>현재 상태</h2>
+    <p>3리터 양동이: <span id="amount3">0</span> L</p>
+    <p>5리터 양동이: <span id="amount5">0</span> L</p>
+    <p>시도 횟수: <span id="attempts">0</span></p>
+    <p id="status"></p>
+
+    <script>
+        let bucket3 = 0;
+        let bucket5 = 0;
+        let attempts = 0;
+
+        function updateDisplay() {
+            document.getElementById('amount3').textContent = bucket3;
+            document.getElementById('amount5').textContent = bucket5;
+            document.getElementById('attempts').textContent = attempts;
+        }
+
+        function fillBucket(size) {
+            attempts++;
+            if (size === '3') {
+                bucket3 = 3;
+            } else if (size === '5') {
+                bucket5 = 5;
+            }
+            updateDisplay();
+            checkSuccess();
+        }
+
+        function emptyBucket(size) {
+            attempts++;
+            if (size === '3') {
+                bucket3 = 0;
+            } else if (size === '5') {
+                bucket5 = 0;
+            }
+            updateDisplay();
+            checkSuccess();
+        }
+
+        function pour(fromSize, toSize) {
+            attempts++;
+            let fromBucket = fromSize === '3' ? bucket3 : bucket5;
+            let toBucket = toSize === '3' ? bucket3 : bucket5;
+            let toBucketCapacity = toSize === '3' ? 3 : 5;
+
+            let pourAmount = Math.min(fromBucket, toBucketCapacity - toBucket);
+            if (fromSize === '3') {
+                bucket3 -= pourAmount;
+            } else {
+                bucket5 -= pourAmount;
+            }
+            if (toSize === '3') {
+                bucket3 += pourAmount;
+            } else {
+                bucket5 += pourAmount;
+            }
+            updateDisplay();
+            checkSuccess();
+        }
+
+        function checkSuccess() {
+            if (bucket3 === 4 || bucket5 === 4) {
+                document.getElementById('status').textContent = '성공! 4리터를 만들었습니다.';
+                disableButtons();
+            }
+        }
+
+        function disableButtons() {
+            document.querySelectorAll('button').forEach(button => button.disabled = true);
+        }
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>
