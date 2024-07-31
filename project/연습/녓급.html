@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select 예제</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select id="selectBox">
+        <option value="default">선택하세요</option>
+        <option value="option1">옵션 1</option>
+        <option value="option2">옵션 2</option>
+        <option value="option3">옵션 3</option>
+    </select>
+
+    <div id="option1Content" class="content hidden">
+        옵션 1 선택됨!
+    </div>
+
+    <div id="option2Content" class="content hidden">
+        옵션 2 선택됨!
+    </div>
+
+    <div id="option3Content" class="content hidden">
+        옵션 3 선택됨!
+    </div>
+
+    <script>
+        var selectBox = document.getElementById('selectBox');
+        var contents = document.querySelectorAll('.content');
+
+        selectBox.addEventListener('change', function () {
+            var selectedOption = this.value;
+
+            // 모든 content를 숨김 처리
+            contents.forEach(function (content) {
+                content.classList.add('hidden');
+            });
+
+            // 선택된 옵션에 해당하는 content만 보이게 처리
+            var selectedContent = document.getElementById(selectedOption + 'Content');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

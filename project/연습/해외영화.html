@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 400px;
+            margin-right: 5px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        .gen_sug {
+            display: flex;
+            align-items: center;
+        }
+
+        .gen_sug h1 {
+            margin-right: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sug">
+        <h1>추천 영화 <span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></h1>
+        <div class="poster">
+            <img src="http://monthly.chosun.com/up_fd/Mdaily/2023-11/bimg_thumb/20231153194273499.jpg">
+            <!-- <div class="hidden_poster">
+                <p> 😘 프로젝트 화이팅 !  </p>
+                <p>  발표날 햄버거 먹어요 ! </p>
+                <p>  햄버거 사줄께요 ^ _^</p>
+                <p>  즐코 ^^</p>
+            </div> -->
+            <img src="https://spnimage.edaily.co.kr/images/photo/files/NP/S/2023/11/PS23111000116.jpg">
+        </div>
+    </div>
+    <div class="gen_sug">
+        <h1>장르별 추천</h1>
+        <select id="menu_select">
+            <option value="select">장르 선택</option>
+            <option value="select1">판타지</option>
+            <option value="select2">SF</option>
+            <option value="select3">로맨스</option>
+            <option value="select4">애니메이션</option>
+            <option value="select5">공포</option>
+        </select>
+    </div>
+    <div id="select1Contect" class="content hidden">
+        <img src="http://monthly.chosun.com/up_fd/Mdaily/2023-11/bimg_thumb/20231153194273499.jpg">
+    </div>
+    <div id="select2Contect" class="content hidden">
+        <img
+            src="https://i.namu.wiki/i/K_YyzVUl_RbLUT2vSCm_E-fBJkVSAKVmJmKvBJy1PZtSrF0dpsxSjFvzMvS13RbBsJ1cFicxUAyMtW2eOdgOXJFZTBeYXSxXYhtnNAAPEsBkLLucbxsmo28CmckbqZmHoMnuXql1HVs6n0UQBass4A.webp">
+    </div>
+    <div id="select3Contect" class="content hidden">
+        <img src="https://www.newsflix.co.kr/news/photo/202406/13359_13074_1546.png">
+    </div>
+    <div id="select4Contect" class="content hidden">
+        <img src="https://spnimage.edaily.co.kr/images/photo/files/NP/S/2023/11/PS23111000116.jpg">
+    </div>
+    <div id="select5Contect" class="content hidden">
+        <img
+            src="https://i.namu.wiki/i/cYSmi9fc-fzbEqrqBifYv-YBS5hkiWtTiioeWumhROq5vpZeoLl8tdsDFYCYRJDKlt-mBL__hbWNr7clRTMIWNnkiswz0uhjUdcJifgYGj1MfZJOol8XEMAyZ88hXV5N7SAlr_ZSWpzaI2lDNhLJuw.webp">
+    </div>
+    <script>
+        var menu_select = document.getElementById('menu_select');
+        var contents = document.querySelectorAll('.content');
+
+        menu_select.addEventListener('change', function () {
+            var selectedOption = this.value;
+
+            // 모든 content를 숨김 처리
+            contents.forEach(function (content) {
+                content.classList.add('hidden');
+            });
+
+            // 선택된 옵션에 해당하는 content만 보이게 처리
+            var selectedContent = document.getElementById(selectedOption + 'Contect');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
